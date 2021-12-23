@@ -14,7 +14,7 @@ LOGGER = logging.getLogger(__name__)
 
 @Client.on_message(filters.command(Config.LOG_COMMAND))
 async def log(bot, message:Message):
-    if not (Config.OWNER_ID != 0 and message.from_user.id == Config.OWNER_ID): return
+    if Config.OWNER_ID == 0 or message.from_user.id != Config.OWNER_ID: return
     try:
         sendDocument(message,"log.txt")
     except Exception as e:

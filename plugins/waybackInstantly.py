@@ -30,7 +30,7 @@ async def waybackInstantly(client: Client, message: Message):
         return
     mesaj = await sendMessage(message,"🇬🇧 Wait about 5 minutes. Saving page.\n🇹🇷 5 dakika bekleyin. Sayfa kaydediliyor.")
     retLink = saveWebPage(link)
-    if retLink == None:
+    if retLink is None:
         await editMessage(mesaj, "🇬🇧 Cannot archieved. Try again later.\n🇹🇷 Arşivlenemedi. Sonra tekrar deneyin.")
         return
     await editMessage(mesaj, f"🇬🇧 Saved webpage. 🇹🇷 Sayfa arşivlendi:\n\n{retLink}")

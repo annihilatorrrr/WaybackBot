@@ -28,7 +28,7 @@ async def help(client, message: Message):
 	if message.from_user.last_name != None: tumad += f" {message.from_user.last_name}"
 	toSendStr = f"Esenlikler / Hi {tumad}\n\n" + sampleText
 	reply_markup = None
-	if Config.UPDATES_CHANNEL != None and Config.UPDATES_CHANNEL != "" and Config.UPDATES_CHANNEL != " ":
+	if Config.UPDATES_CHANNEL not in [None, "", " "]:
 		reply_markup=InlineKeyboardMarkup(
 			[
 				[InlineKeyboardButton(
